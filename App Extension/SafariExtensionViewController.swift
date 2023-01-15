@@ -10,20 +10,22 @@ import SwiftUI
 
 class SafariExtensionViewController: SFSafariExtensionViewController {
     
-    @StateObject var websiteDetails = WebsiteDetailsModel()
-//    private var contentView: ContentView? = nil
+    var viewModel: ViewModel = ViewModel()
 
-    func setWebsiteTitle(title: String) async {
-        websiteDetails.title = title
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
 
-    static let shared: SafariExtensionViewController = {
-        return SafariExtensionViewController()
-    }()
-    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+//    static let shared: SafariExtensionViewController = {
+//        return SafariExtensionViewController()
+//    }()
+//
     override func loadView() {
-//        let _contentView = ContentView().environmentObject(websiteDetails) as! ContentView
-//        self.contentView = _contentView
-        view = NSHostingView(rootView: ContentView().environmentObject(websiteDetails))
+        view = NSHostingView(rootView: ContentView().environmentObject(viewModel))
     }
 }
