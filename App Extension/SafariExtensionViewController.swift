@@ -27,6 +27,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 //    }()
 //
     override func loadView() {
-        view = NSHostingView(rootView: ContentView().environmentObject(viewModel))
+        view = NSHostingView(rootView: ContentView(saveHandler: dismissPopover).environmentObject(viewModel))
     }
 }

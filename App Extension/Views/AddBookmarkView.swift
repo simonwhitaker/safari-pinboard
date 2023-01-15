@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+enum SavingState {
+    case none
+    case saving
+    case success
+    case failure
+}
+
 struct AddBookmarkView: View {
     @EnvironmentObject var websiteDetails: ViewModel
+    var saveHandler: () -> Void
+    @State var savingState: SavingState = .none
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,15 +35,32 @@ struct AddBookmarkView: View {
                 Text("Read Later").font(.caption)
             }
 
-            HStack(alignment: .bottom) {
-                Button("Save") {
+            HStack(spacing: 12.0) {
+                Button("Add Bookmark") {
+                    savingState = .saving
                     Task {
                         do {
                             try await websiteDetails.save()
+                            savingState = .success
                         } catch {
-
+                            savingState = .failure
                         }
                     }
+                }.disabled(savingState != .none)
+
+
+                if savingState == .saving {
+                    ProgressView().controlSize(.small).opacity(savingState == .saving ? 1.0 : 0.0)
+                }
+
+                if savingState == .failure || savingState == .success {
+                    Image(systemName: savingState == .success ? "checkmark.circle.fill" : "xmark.circle.fill")
+                        .foregroundColor(savingState == .success ? .green : .red)
+                        .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                saveHandler()
+                            }
+                        }
                 }
 
                 Spacer()
@@ -42,13 +68,13 @@ struct AddBookmarkView: View {
                 Button("Logout") {
                     websiteDetails.authToken = nil
                 }.buttonStyle(.link).font(.caption)
-            }
+            }.frame(height: 24)
         }
     }
 }
 
 struct AddBookmarkView_Previews: PreviewProvider {
     static var previews: some View {
-        AddBookmarkView()
+        AddBookmarkView() {}
     }
 }

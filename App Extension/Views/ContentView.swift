@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var websiteDetails: ViewModel
+    var saveHandler: () -> Void
 
     var body: some View {
         ZStack {
             if websiteDetails.authToken == nil {
                 AuthenticateView()
             } else {
-                AddBookmarkView()
+                AddBookmarkView(saveHandler: saveHandler)
             }
         }.frame(width: 300).padding(20)
     }
@@ -23,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(ViewModel())
+        ContentView(saveHandler: {}).environmentObject(ViewModel())
     }
 }
