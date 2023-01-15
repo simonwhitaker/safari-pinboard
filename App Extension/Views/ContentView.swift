@@ -18,7 +18,7 @@ struct ContentView: View {
             } else {
                 AddBookmarkView(saveHandler: saveHandler)
             }
-        }.frame(width: 300).padding(20)
+        }.frame(width: 360).padding(20)
     }
 }
 
