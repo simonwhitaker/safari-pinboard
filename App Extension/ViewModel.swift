@@ -9,5 +9,9 @@ import Foundation
 
 final class WebsiteDetailsModel: ObservableObject {
     @Published var url: URL? = URL(string: "https://apple.com/")
-    @Published var title: String? = "Apple"
+    @Published var title: String? = "Xxx"
+
+    func setTitle(title: String) {
+        self.title = title
+    }
 }
