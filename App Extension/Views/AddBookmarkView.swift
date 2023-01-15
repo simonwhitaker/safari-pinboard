@@ -12,14 +12,11 @@ struct AddBookmarkView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Title").font(.caption)
             TextField("Title", text: $websiteDetails.title)
 
-            Text("Description").font(.caption)
             TextField("Description", text: $websiteDetails.description)
 
-            Text("Tags (separate with spaces)").font(.caption)
-            TextField("Tags", text :$websiteDetails.tags)
+            TextField("Tags (separate with spaces)", text :$websiteDetails.tags)
 
             Toggle(isOn: $websiteDetails.isPrivate) {
                 Text("Private").font(.caption)
@@ -29,17 +26,22 @@ struct AddBookmarkView: View {
                 Text("Read Later").font(.caption)
             }
 
-            Button("Save") {
-                Task {
-                    do {
-                        try await websiteDetails.save()
-                    } catch {
+            HStack(alignment: .bottom) {
+                Button("Save") {
+                    Task {
+                        do {
+                            try await websiteDetails.save()
+                        } catch {
 
+                        }
                     }
                 }
-            }
-            Button("Logout") {
-                websiteDetails.authToken = nil
+
+                Spacer()
+
+                Button("Logout") {
+                    websiteDetails.authToken = nil
+                }.buttonStyle(.link).font(.caption)
             }
         }
     }
