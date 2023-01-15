@@ -12,13 +12,16 @@ struct AuthenticateView: View {
     @EnvironmentObject var websiteDetails: ViewModel
 
     var body: some View {
-        HStack {
-            SecureField(text: $authToken) {
-                Text("Enter your Pinboard API key")
+        VStack(alignment: .leading) {
+            HStack {
+                SecureField(text: $authToken) {
+                    Text("Enter your Pinboard API key")
+                }
+                Button("Save") {
+                    websiteDetails.authToken = authToken
+                }
             }
-            Button("Save") {
-                websiteDetails.authToken = authToken
-            }
+            Text("Get your API token from https://pinboard.in/settings/password").font(.footnote)
         }
     }
 }
