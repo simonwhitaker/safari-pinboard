@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F414B82C297432B900920088 /* SwiftPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = F414B82B297432B900920088 /* SwiftPinboard */; };
 		F414B82F2974426700920088 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414B82E2974426700920088 /* AddBookmarkView.swift */; };
 		F414B8312974430B00920088 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414B8302974430B00920088 /* AuthenticateView.swift */; };
+		F414B834297447C700920088 /* SwiftPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = F414B833297447C700920088 /* SwiftPinboard */; };
 		F46C24AA2972B3620034CD4E /* Pinboard_for_SafariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24A92972B3620034CD4E /* Pinboard_for_SafariApp.swift */; };
 		F46C24AC2972B3620034CD4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24AB2972B3620034CD4E /* ContentView.swift */; };
 		F46C24AE2972B3620034CD4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C24AD2972B3620034CD4E /* Assets.xcassets */; };
@@ -48,9 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F414B8292974316500920088 /* SwiftPinboard */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPinboard; path = ../SwiftPinboard; sourceTree = "<group>"; };
 		F414B82E2974426700920088 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		F414B8302974430B00920088 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
+		F414B832297447B800920088 /* SwiftPinboard */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPinboard; path = ../../libs/SwiftPinboard; sourceTree = "<group>"; };
 		F46C24A62972B3620034CD4E /* Pinboard for Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinboard for Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C24A92972B3620034CD4E /* Pinboard_for_SafariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_for_SafariApp.swift; sourceTree = "<group>"; };
 		F46C24AB2972B3620034CD4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F414B82C297432B900920088 /* SwiftPinboard in Frameworks */,
+				F414B834297447C700920088 /* SwiftPinboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 		F414B8282974316500920088 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				F414B8292974316500920088 /* SwiftPinboard */,
+				F414B832297447B800920088 /* SwiftPinboard */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			);
 			name = "App Extension";
 			packageProductDependencies = (
-				F414B82B297432B900920088 /* SwiftPinboard */,
+				F414B833297447C700920088 /* SwiftPinboard */,
 			);
 			productName = "App Extension";
 			productReference = F46C24DE2972B74A0034CD4E /* App Extension.appex */;
@@ -573,7 +573,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F414B82B297432B900920088 /* SwiftPinboard */ = {
+		F414B833297447C700920088 /* SwiftPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftPinboard;
 		};
