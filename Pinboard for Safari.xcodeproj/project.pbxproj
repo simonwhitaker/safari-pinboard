@@ -18,7 +18,7 @@
 		F46C24E32972B74B0034CD4E /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24E22972B74B0034CD4E /* SafariExtensionViewController.swift */; };
 		F46C24E62972B74B0034CD4E /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = F46C24E52972B74B0034CD4E /* script.js */; };
 		F46C24E82972B74B0034CD4E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F46C24E72972B74B0034CD4E /* ToolbarItemIcon.pdf */; };
-		F46C24F02972B74B0034CD4E /* App Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F46C24DE2972B74A0034CD4E /* App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F46C24F02972B74B0034CD4E /* Safari App Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F46C24F52972BBAB0034CD4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24F42972BBAB0034CD4E /* ContentView.swift */; };
 		F46C25112972C59A0034CD4E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C25102972C59A0034CD4E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F46C24F02972B74B0034CD4E /* App Extension.appex in Embed Foundation Extensions */,
+				F46C24F02972B74B0034CD4E /* Safari App Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,7 +57,7 @@
 		F46C24AD2972B3620034CD4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F46C24B02972B3620034CD4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F46C24B22972B3620034CD4E /* Pinboard_for_Safari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboard_for_Safari.entitlements; sourceTree = "<group>"; };
-		F46C24DE2972B74A0034CD4E /* App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C24E02972B74B0034CD4E /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		F46C24E22972B74B0034CD4E /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		F46C24E52972B74B0034CD4E /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F46C24A62972B3620034CD4E /* Pinboard for Safari.app */,
-				F46C24DE2972B74A0034CD4E /* App Extension.appex */,
+				F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 			productReference = F46C24A62972B3620034CD4E /* Pinboard for Safari.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F46C24DD2972B74A0034CD4E /* App Extension */ = {
+		F46C24DD2972B74A0034CD4E /* Safari App Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F46C24F12972B74B0034CD4E /* Build configuration list for PBXNativeTarget "App Extension" */;
+			buildConfigurationList = F46C24F12972B74B0034CD4E /* Build configuration list for PBXNativeTarget "Safari App Extension" */;
 			buildPhases = (
 				F46C24DA2972B74A0034CD4E /* Sources */,
 				F46C24DB2972B74A0034CD4E /* Frameworks */,
@@ -209,12 +209,12 @@
 			);
 			dependencies = (
 			);
-			name = "App Extension";
+			name = "Safari App Extension";
 			packageProductDependencies = (
 				F414B833297447C700920088 /* SwiftPinboard */,
 			);
 			productName = "App Extension";
-			productReference = F46C24DE2972B74A0034CD4E /* App Extension.appex */;
+			productReference = F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 			projectRoot = "";
 			targets = (
 				F46C24A52972B3620034CD4E /* Pinboard for Safari */,
-				F46C24DD2972B74A0034CD4E /* App Extension */,
+				F46C24DD2972B74A0034CD4E /* Safari App Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -303,7 +303,7 @@
 /* Begin PBXTargetDependency section */
 		F46C24EF2972B74B0034CD4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F46C24DD2972B74A0034CD4E /* App Extension */;
+			target = F46C24DD2972B74A0034CD4E /* Safari App Extension */;
 			targetProxy = F46C24EE2972B74B0034CD4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -488,7 +488,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "App Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Add to Pinboard";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,7 +519,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "App Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "Add to Pinboard";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F46C24F12972B74B0034CD4E /* Build configuration list for PBXNativeTarget "App Extension" */ = {
+		F46C24F12972B74B0034CD4E /* Build configuration list for PBXNativeTarget "Safari App Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F46C24F22972B74B0034CD4E /* Debug */,
