@@ -21,6 +21,8 @@ struct AddBookmarkView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            Text("Add to Pinboard").font(.title)
+
             TextField("Title", text: $websiteDetails.title)
 
             TextField("Description", text: $websiteDetails.description)
