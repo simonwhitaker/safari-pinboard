@@ -24,6 +24,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
         validationHandler(true, "")
     }
+
+    override func toolbarItemClicked(in window: SFSafariWindow) {
+        // Don't remove this method, or the toolbar item doesn't appear in Safari.
+        NSLog("toolbarItemClicked")
+    }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
         return SafariExtensionViewController(viewModel: SafariExtensionHandler.viewModel)
