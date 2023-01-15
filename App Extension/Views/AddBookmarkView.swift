@@ -30,7 +30,6 @@ struct AddBookmarkView: View {
             }
 
             Button("Save") {
-                NSLog("Saving bookmark")
                 Task {
                     do {
                         try await websiteDetails.save()
@@ -38,6 +37,9 @@ struct AddBookmarkView: View {
 
                     }
                 }
+            }
+            Button("Logout") {
+                websiteDetails.authToken = nil
             }
         }
     }

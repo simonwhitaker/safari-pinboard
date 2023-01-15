@@ -22,6 +22,8 @@ final class ViewModel: ObservableObject {
         didSet {
             if let authToken = authToken {
                 storeAuthTokenInKeychain(authToken: authToken)
+            } else {
+                deleteAuthTokenFromKeychain()
             }
         }
     }
@@ -79,5 +81,14 @@ final class ViewModel: ObservableObject {
         }
 
         return token
+    }
+
+    func deleteAuthTokenFromKeychain() {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassInternetPassword,
+            kSecAttrServer as String: server,
+        ]
+        let status = SecItemDelete(query as CFDictionary)
+        // TODO: handle status
     }
 }
