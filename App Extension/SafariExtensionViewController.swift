@@ -10,7 +10,7 @@ import SwiftUI
 
 class SafariExtensionViewController: SFSafariExtensionViewController {
     
-    var viewModel: ViewModel = ViewModel()
+    var viewModel: ViewModel
 
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -18,6 +18,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     }
 
     required init?(coder: NSCoder) {
+        self.viewModel = ViewModel()
         super.init(coder: coder)
     }
 

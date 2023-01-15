@@ -27,7 +27,7 @@ final class ViewModel: ObservableObject {
     }
 
     init() {
-        loadAuthTokenFromKeychain()
+        self.authToken = loadAuthTokenFromKeychain()
     }
 
     public func save() async throws {
@@ -56,7 +56,7 @@ final class ViewModel: ObservableObject {
         }
     }
 
-    func loadAuthTokenFromKeychain() {
+    func loadAuthTokenFromKeychain() -> String? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassInternetPassword,
             kSecAttrServer as String: server,
@@ -66,19 +66,18 @@ final class ViewModel: ObservableObject {
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         guard status != errSecItemNotFound else {
-            return
+            return nil
         }
         guard status == errSecSuccess else {
-            NSLog("Error on retrieving auth token: \(status)")
-            return
+            return nil
         }
 
-        guard let existingItem = item as? [String : Any],
-              let passwordData = existingItem[kSecValueData as String] as? Data,
-              let token = String(data: passwordData, encoding: String.Encoding.utf8)
+        guard let tokenData = item as? Data,
+              let token = String(data: tokenData, encoding: String.Encoding.utf8)
         else {
-            return
+            return nil
         }
-        authToken = token
+
+        return token
     }
 }
