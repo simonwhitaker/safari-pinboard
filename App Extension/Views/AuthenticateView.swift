@@ -16,6 +16,8 @@ struct AuthenticateView: View {
             HStack {
                 SecureField(text: $authToken) {
                     Text("Enter your Pinboard API key")
+                }.onSubmit {
+                    websiteDetails.authToken = authToken
                 }
                 Button("Save") {
                     websiteDetails.authToken = authToken
