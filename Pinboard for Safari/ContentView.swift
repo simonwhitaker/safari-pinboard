@@ -6,16 +6,23 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(alignment: .leading, spacing: 24) {
+            Text("Start using Pinboard for Safari").font(.title)
+
+            Button("Open Safari Preferences") {
+                SFSafariApplication.showPreferencesForExtension(withIdentifier: "org.netcetera.Pinboard-for-Safari.App-Extension")
+            }
+
+            Text("Then turn on Add to Pinboard, and click Always Allow on Every Website")
+
+            Spacer()
         }
         .padding()
+        .frame(width: 400, height: 300)
     }
 }
 
