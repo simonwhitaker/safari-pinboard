@@ -36,7 +36,14 @@ final class ViewModel: ObservableObject {
         let client = PinboardClient(authToken: authToken)
 
         do {
-            try await client.addBookmark(url: self.urlString, title: self.title, description: self.description)
+            try await client.addBookmark(
+                url: self.urlString,
+                title: self.title,
+                description: self.description,
+                tags: self.tags,
+                isReadLater: self.isReadLater,
+                isPrivate: self.isPrivate
+            )
         } catch PinboardClientError.AuthenticationError {
             // TODO: need to log in
             NSLog("[SW] Unauthorised")
