@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F401EB512976EE1500795D96 /* SwiftPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = F401EB502976EE1500795D96 /* SwiftPinboard */; };
+		F401EB532976EE2100795D96 /* SwiftPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = F401EB522976EE2100795D96 /* SwiftPinboard */; };
 		F414B82F2974426700920088 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414B82E2974426700920088 /* AddBookmarkView.swift */; };
 		F414B8312974430B00920088 /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F414B8302974430B00920088 /* AuthenticateView.swift */; };
-		F414B834297447C700920088 /* SwiftPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = F414B833297447C700920088 /* SwiftPinboard */; };
 		F46C24AA2972B3620034CD4E /* Pinboard_for_SafariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24A92972B3620034CD4E /* Pinboard_for_SafariApp.swift */; };
 		F46C24AC2972B3620034CD4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24AB2972B3620034CD4E /* ContentView.swift */; };
 		F46C24AE2972B3620034CD4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C24AD2972B3620034CD4E /* Assets.xcassets */; };
@@ -49,7 +50,6 @@
 /* Begin PBXFileReference section */
 		F414B82E2974426700920088 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		F414B8302974430B00920088 /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
-		F414B832297447B800920088 /* SwiftPinboard */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPinboard; path = ../../libs/SwiftPinboard; sourceTree = "<group>"; };
 		F46C24A62972B3620034CD4E /* Pinboard for Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinboard for Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C24A92972B3620034CD4E /* Pinboard_for_SafariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinboard_for_SafariApp.swift; sourceTree = "<group>"; };
 		F46C24AB2972B3620034CD4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F401EB512976EE1500795D96 /* SwiftPinboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F414B834297447C700920088 /* SwiftPinboard in Frameworks */,
+				F401EB532976EE2100795D96 /* SwiftPinboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +89,6 @@
 		F414B8282974316500920088 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				F414B832297447B800920088 /* SwiftPinboard */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -190,6 +190,9 @@
 				F46C24EF2972B74B0034CD4E /* PBXTargetDependency */,
 			);
 			name = "Pinboard for Safari";
+			packageProductDependencies = (
+				F401EB502976EE1500795D96 /* SwiftPinboard */,
+			);
 			productName = "Pinboard for Safari";
 			productReference = F46C24A62972B3620034CD4E /* Pinboard for Safari.app */;
 			productType = "com.apple.product-type.application";
@@ -208,7 +211,7 @@
 			);
 			name = "Safari App Extension";
 			packageProductDependencies = (
-				F414B833297447C700920088 /* SwiftPinboard */,
+				F401EB522976EE2100795D96 /* SwiftPinboard */,
 			);
 			productName = "App Extension";
 			productReference = F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */;
@@ -241,6 +244,9 @@
 				Base,
 			);
 			mainGroup = F46C249D2972B3620034CD4E;
+			packageReferences = (
+				F401EB4F2976EE1500795D96 /* XCRemoteSwiftPackageReference "SwiftPinboard" */,
+			);
 			productRefGroup = F46C24A72972B3620034CD4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,6 +439,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +468,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,9 +576,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		F401EB4F2976EE1500795D96 /* XCRemoteSwiftPackageReference "SwiftPinboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simonwhitaker/SwiftPinboard";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		F414B833297447C700920088 /* SwiftPinboard */ = {
+		F401EB502976EE1500795D96 /* SwiftPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = F401EB4F2976EE1500795D96 /* XCRemoteSwiftPackageReference "SwiftPinboard" */;
+			productName = SwiftPinboard;
+		};
+		F401EB522976EE2100795D96 /* SwiftPinboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F401EB4F2976EE1500795D96 /* XCRemoteSwiftPackageReference "SwiftPinboard" */;
 			productName = SwiftPinboard;
 		};
 /* End XCSwiftPackageProductDependency section */

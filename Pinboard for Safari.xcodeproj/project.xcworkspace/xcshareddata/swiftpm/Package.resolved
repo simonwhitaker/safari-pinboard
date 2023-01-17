@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftpinboard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonwhitaker/SwiftPinboard",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b43e1290d8667db71f5bd5a8fcc3d56f330cc789"
+      }
+    }
+  ],
+  "version" : 2
+}
