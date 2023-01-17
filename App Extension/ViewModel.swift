@@ -35,12 +35,19 @@ final class ViewModel: ObservableObject {
     public func save() async throws {
         let client = PinboardClient(authToken: authToken)
 
+        #if DEBUG
+        let tags = tags + " .debug"
+        #else
+        let tags = self.tags
+        #endif
+
+
         do {
             try await client.addBookmark(
                 url: self.urlString,
                 title: self.title,
                 description: self.description,
-                tags: self.tags,
+                tags: tags,
                 isReadLater: self.isReadLater,
                 isPrivate: self.isPrivate
             )
