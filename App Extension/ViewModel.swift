@@ -111,7 +111,8 @@ final class ViewModel: ObservableObject {
             kSecClass as String: kSecClassInternetPassword,
             kSecAttrServer as String: server,
         ]
-        let status = SecItemDelete(query as CFDictionary)
-        // TODO: handle status
+
+        // TODO: get return value, handle failure
+        SecItemDelete(query as CFDictionary)
     }
 }
