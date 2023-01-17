@@ -19,7 +19,16 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
-        validationHandler(true, "")
+        Task {
+            let tab = await window.activeTab()
+            let page = await tab?.activePage()
+            let props = await page?.properties()
+
+            DispatchQueue.main.async {
+                // Only enable the toolbar button if there is a URL to save. (Disables the toolbar button on e.g. the new tab view)
+                validationHandler(props?.url != nil, "")
+            }
+        }
     }
 
     override func toolbarItemClicked(in window: SFSafariWindow) {
