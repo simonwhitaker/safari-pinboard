@@ -16,7 +16,6 @@
 		F46C24B12972B3620034CD4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C24B02972B3620034CD4E /* Preview Assets.xcassets */; };
 		F46C24E12972B74B0034CD4E /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24E02972B74B0034CD4E /* SafariExtensionHandler.swift */; };
 		F46C24E32972B74B0034CD4E /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24E22972B74B0034CD4E /* SafariExtensionViewController.swift */; };
-		F46C24E62972B74B0034CD4E /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = F46C24E52972B74B0034CD4E /* script.js */; };
 		F46C24E82972B74B0034CD4E /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F46C24E72972B74B0034CD4E /* ToolbarItemIcon.pdf */; };
 		F46C24F02972B74B0034CD4E /* Safari App Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F46C24F52972BBAB0034CD4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C24F42972BBAB0034CD4E /* ContentView.swift */; };
@@ -60,7 +59,6 @@
 		F46C24DE2972B74A0034CD4E /* Safari App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C24E02972B74B0034CD4E /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		F46C24E22972B74B0034CD4E /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		F46C24E52972B74B0034CD4E /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		F46C24E72972B74B0034CD4E /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		F46C24EC2972B74B0034CD4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46C24ED2972B74B0034CD4E /* App_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App_Extension.entitlements; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		F46C24E42972B74B0034CD4E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F46C24E52972B74B0034CD4E /* script.js */,
 				F46C24E72972B74B0034CD4E /* ToolbarItemIcon.pdf */,
 			);
 			path = Resources;
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C24E82972B74B0034CD4E /* ToolbarItemIcon.pdf in Resources */,
-				F46C24E62972B74B0034CD4E /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
