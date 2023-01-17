@@ -15,7 +15,7 @@ struct AuthenticateView: View {
         VStack(alignment: .leading) {
             HStack {
                 SecureField(text: $authToken) {
-                    Text("Enter your Pinboard API key")
+                    Text("Enter your Pinboard API Token")
                 }.onSubmit {
                     websiteDetails.authToken = authToken
                 }
@@ -23,7 +23,7 @@ struct AuthenticateView: View {
                     websiteDetails.authToken = authToken
                 }
             }
-            Text("Get your API token from https://pinboard.in/settings/password").font(.footnote)
+            Text("Get your API Token from https://pinboard.in/settings/password").font(.footnote)
         }
     }
 }
