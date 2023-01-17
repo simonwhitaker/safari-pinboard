@@ -10,9 +10,6 @@ import SwiftUI
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
-    static let viewModel = ViewModel()
-
-
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
@@ -31,7 +28,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController(viewModel: SafariExtensionHandler.viewModel)
+        return SafariExtensionViewController.shared
     }
 
     override func popoverWillShow(in window: SFSafariWindow) {
@@ -41,8 +38,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             let props = await page?.properties()
 
             DispatchQueue.main.async {
-                SafariExtensionHandler.viewModel.title = props?.title ?? "unknown"
-                SafariExtensionHandler.viewModel.urlString = props?.url?.absoluteString ?? "unknown"
+                let model = SafariExtensionViewController.shared.viewModel
+                model.reset()
+                model.title = props?.title ?? "unknown"
+                model.urlString = props?.url?.absoluteString ?? "unknown"
             }
         }
     }

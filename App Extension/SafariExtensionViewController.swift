@@ -22,10 +22,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         super.init(coder: coder)
     }
 
-//    static let shared: SafariExtensionViewController = {
-//        return SafariExtensionViewController()
-//    }()
-//
+    static let shared: SafariExtensionViewController = {
+        return SafariExtensionViewController(viewModel: ViewModel())
+    }()
+
     override func loadView() {
         view = NSHostingView(rootView: ContentView(saveHandler: dismissPopover).environmentObject(viewModel))
     }

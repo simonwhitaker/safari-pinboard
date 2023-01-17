@@ -32,6 +32,15 @@ final class ViewModel: ObservableObject {
         self.authToken = loadAuthTokenFromKeychain()
     }
 
+    public func reset() {
+        title = ""
+        urlString = ""
+        tags = ""
+        description = ""
+        isPrivate = false
+        isReadLater = false
+    }
+
     public func save() async throws {
         let client = PinboardClient(authToken: authToken)
 
