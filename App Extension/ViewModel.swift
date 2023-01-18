@@ -28,6 +28,13 @@ final class ViewModel: ObservableObject {
         }
     }
 
+    public func username() -> String? {
+        if let authToken = authToken, let i = authToken.firstIndex(of: ":") {
+            return String(authToken[..<i])
+        }
+        return nil
+    }
+
     init() {
         self.authToken = loadAuthTokenFromKeychain()
     }

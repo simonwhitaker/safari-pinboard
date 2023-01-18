@@ -21,6 +21,18 @@ struct AddBookmarkView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+
+                if let username = websiteDetails.username() {
+                    Text("Logged in as \(username)").font(.caption)
+                }
+                
+                Button("Logout") {
+                    websiteDetails.authToken = nil
+                }.buttonStyle(.link).font(.caption)
+            }
+
             Text("Add to Pinboard").font(.title)
 
             TextField("Title", text: $websiteDetails.title)
@@ -64,12 +76,6 @@ struct AddBookmarkView: View {
                             }
                         }
                 }
-
-                Spacer()
-
-                Button("Logout") {
-                    websiteDetails.authToken = nil
-                }.buttonStyle(.link).font(.caption)
             }.frame(height: 24)
         }
     }
