@@ -19,6 +19,18 @@ struct AddBookmarkView: View {
     var saveHandler: () -> Void
     @State var savingState: SavingState = .none
 
+    func saveBookmark() -> Void {
+        savingState = .saving
+        Task {
+            do {
+                try await websiteDetails.save()
+                savingState = .success
+            } catch {
+                savingState = .failure
+            }
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -35,11 +47,11 @@ struct AddBookmarkView: View {
 
             Text("Add to Pinboard").font(.title)
 
-            TextField("Title", text: $websiteDetails.title)
+            TextField("Title", text: $websiteDetails.title).onSubmit(saveBookmark)
 
-            TextField("Description", text: $websiteDetails.description)
+            TextField("Description", text: $websiteDetails.description).onSubmit(saveBookmark)
 
-            TextField("Tags (separate with spaces)", text :$websiteDetails.tags)
+            TextField("Tags (separate with spaces)", text :$websiteDetails.tags).onSubmit(saveBookmark)
 
             Toggle(isOn: $websiteDetails.isPrivate) {
                 Text("Private").font(.caption)
@@ -50,18 +62,7 @@ struct AddBookmarkView: View {
             }
 
             HStack(spacing: 12.0) {
-                Button("Add Bookmark") {
-                    savingState = .saving
-                    Task {
-                        do {
-                            try await websiteDetails.save()
-                            savingState = .success
-                        } catch {
-                            savingState = .failure
-                        }
-                    }
-                }.disabled(savingState != .none)
-
+                Button("Add Bookmark", action: saveBookmark).buttonStyle(.borderedProminent).disabled(savingState != .none)
 
                 if savingState == .saving {
                     ProgressView().controlSize(.small).opacity(savingState == .saving ? 1.0 : 0.0)
@@ -73,6 +74,7 @@ struct AddBookmarkView: View {
                         .onAppear() {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                                 saveHandler()
+                                savingState = .none
                             }
                         }
                 }
